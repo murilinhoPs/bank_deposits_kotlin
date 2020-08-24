@@ -14,7 +14,9 @@ class AccountMath {
         val account1Bonus = bonusToApply(account1)
         val (bonusCalcAccount1, depositCalcAccount1) =
                 calculateDeposit(account1.deposit, account1Bonus)
+
         //----------------------------------------------------------//
+
         makeDeposit(bonusCalcAccount1, depositCalcAccount1)
         //endregion
 
@@ -22,7 +24,9 @@ class AccountMath {
         val account2Bonus = bonusToApply(account2)
         val (bonusCalcAccount2, depositCalcAccount2) =
                 calculateDeposit(account2.deposit, account1Bonus)
+
         //----------------------------------------------------------//
+
         makeDeposit(bonusCalcAccount2, depositCalcAccount2)
         //endregion
 
@@ -30,7 +34,9 @@ class AccountMath {
         val account3Bonus = bonusToApply(account3)
         val (bonusCalcAccount3, depositCalcAccount3) =
                 calculateDeposit(account3.deposit, account3Bonus)
+
         //----------------------------------------------------------//
+
         makeDeposit(bonusCalcAccount3, depositCalcAccount3)
         //endregion
 
