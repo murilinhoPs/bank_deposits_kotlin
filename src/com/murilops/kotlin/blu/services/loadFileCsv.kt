@@ -11,7 +11,7 @@ private val VALOR = 1
 val accountsFromCsv = ArrayList<AccountModel>()
 var finalAccountsFromCsv = ArrayList<AccountModel>()
 
-fun main() {
+fun readFromCsv() {
     var fileReader: BufferedReader? = null
 
     try {
@@ -32,25 +32,25 @@ fun main() {
                         tokens[CONTA], 0.0, arrayOf((tokens[VALOR]).toDouble()))
 
                 accountsFromCsv.add(account)
-                finalAccountsFromCsv.add(account)
             }
 
             line = fileReader.readLine()
         }
 
-        val resultList = (finalAccountsFromCsv + accountsFromCsv).distinctBy(AccountModel::accountId)
-
-        for (account in resultList) {
-            //println(account.accountId + " " + account.deposit[0])
-        }
+        val resultList =  accountsFromCsv.distinctBy(AccountModel::accountId)
 
 
         // Print the new customer list
         for (account in accountsFromCsv) {
             println(account.accountId + " " + account.deposit[0])
 
-            println(accountsFromCsv.filter { it.accountId.contains(account.accountId) }.toString())
+            finalAccountsFromCsv.add(account)
+            finalAccountsFromCsv.distinctBy(AccountModel::accountId)
 
+            //var teste2 = accountsFromCsv.filter { it.accountId.contains(account.accountId) }
+                    //.forEach {
+                //println(it.accountId)
+            //}
         }
     } catch (e: Exception) {
         println("Reading CSV Error!")
