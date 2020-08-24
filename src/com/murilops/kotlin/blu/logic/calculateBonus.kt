@@ -8,7 +8,7 @@ private var bonusValues = arrayOf<Double>(0.1, 0.05, 0.01)
 public fun bonusToApply(model: AccountModel): Double {
     var bonus = 0.0
 
-    var lastIdChar = model.id.last()
+    var lastIdChar = model.accountId.last()
 
     if (lastIdChar in '1'..'3') {
         bonus = bonusValues[0]

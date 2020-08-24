@@ -5,6 +5,6 @@ import com.murilops.kotlin.blu.logic.AccountMath
 fun main(){
     var accountMath = AccountMath()
 
-    accountMath.calculateAccountOperations()
+    accountMath.makeAccountOperations()
 }
 
