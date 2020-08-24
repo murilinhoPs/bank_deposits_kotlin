@@ -2,7 +2,6 @@ package com.murilops.kotlin.blu.logic
 
 import com.murilops.kotlin.blu.models.AccountModel
 import com.murilops.kotlin.blu.services.saveToCsv
-import com.murilops.kotlin.blu.services.finalAccountsFromCsv
 
 
 class AccountMath {
@@ -12,7 +11,7 @@ class AccountMath {
             AccountModel("1236-0", 0.0, arrayOf(120.0))
     )*/
 
-    private var accounts = finalAccountsFromCsv
+    private var accounts = finalAccountsList
 
     fun makeAccountOperations() {
         var bonusList = ArrayList<Double>()
