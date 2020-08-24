@@ -14,7 +14,6 @@ class AccountMath {
 
     private var accounts = finalAccountsFromCsv
 
-
     fun makeAccountOperations() {
         var bonusList = ArrayList<Double>()
         var depositList = ArrayList<Double>()
@@ -34,6 +33,6 @@ class AccountMath {
             depositList.add(depositCalcAccount)
             finalDepositsList.add(accountTotal)
         }
-        saveToCsv(accounts.distinctBy(AccountModel::accountId), bonusList, depositList, finalDepositsList)
+        saveToCsv(accounts, bonusList, depositList, finalDepositsList)
     }
 }
