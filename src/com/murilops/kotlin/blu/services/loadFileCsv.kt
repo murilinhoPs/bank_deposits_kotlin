@@ -9,22 +9,21 @@ import java.util.ArrayList
 private val CONTA = 0
 private val VALOR = 1
 
-
 fun readFromCsv() {
     var fileReader: BufferedReader? = null
     var accountsFromCsv = ArrayList<AccountModel>()
 
-
     try {
         var line: String?
-        println("Digite o caminho do arquivo para leitura")
+
+        println("Digite o caminho do arquivo para leitura. Absolute path ou Complete path")
         var path = readLine()
 
         fileReader = BufferedReader(FileReader(path))
-
         fileReader.readLine()
 
         line = fileReader.readLine()
+
         while (line != null) {
             val tokens = line.split(",")
             if (tokens.isNotEmpty()) {
@@ -38,7 +37,6 @@ fun readFromCsv() {
         }
 
         csvToModel(accountsFromCsv)
-
     } catch (e: Exception) {
         println("Reading CSV Error!")
         e.printStackTrace()

@@ -5,34 +5,34 @@ import java.util.ArrayList
 
 var finalAccountsList = ArrayList<AccountModel>()
 
-fun csvToModel(accountsFromCsv: ArrayList<AccountModel>){
+fun csvToModel(accountsFromCsv: ArrayList<AccountModel>) {
     var resultList = ArrayList<AccountModel>()
 
     for (account in accountsFromCsv) {
         finalAccountsList.add(account)
 
-        //filter by equals accountIds
-        var filteredList = accountsFromCsv.filter { it.accountId.contains(account.accountId) }
+        var filteredListByAccountId = accountsFromCsv.filter { it.accountId.contains(account.accountId) }
 
-        // if filteredList.size >= 2, then it means that there is a same element with same accountId
-        if(filteredList.size >= 2) {
-            resultList = ArrayList(filteredList)
-            finalAccountsList.removeAll(filteredList)
+        // it means that there is a same element with same accountId
+        if (filteredListByAccountId.size >= 2) {
+            resultList = ArrayList(filteredListByAccountId)
+
+            finalAccountsList.removeAll(filteredListByAccountId)
         }
     }
 
-    var soma = 0.0
-    var newAccountId = ""
+    var sumFromDepositValues = 0.0
+    var maintainAccountId = ""
 
-    for(list in resultList){
+    for (list in resultList) {
 
         var depositValues: Double = 0.0
         list.deposit.forEach { depositValues = it }
 
-        soma += depositValues
-        newAccountId = list.accountId
+        sumFromDepositValues += depositValues
+        maintainAccountId = list.accountId
     }
-    println("$soma e $newAccountId")
+    println("$sumFromDepositValues e $maintainAccountId")
 
-    finalAccountsList.add(0, AccountModel(newAccountId, 0.0, arrayOf(soma)))
+    finalAccountsList.add(0, AccountModel(maintainAccountId, 0.0, arrayOf(sumFromDepositValues)))
 }
