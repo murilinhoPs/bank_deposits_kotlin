@@ -17,7 +17,7 @@ ________________________________________________________________________________
 ### Getting Started
 
 This app was created using intelliJ IDEA with Kotlin:
-- [Expo.io website](https://kotlinlang.org/docs/tutorials/jvm-get-started.html)
+- [Kotlin website](https://kotlinlang.org/docs/tutorials/jvm-get-started.html)
 
 1. Clone this repository in the directory you want
 2. Open and run it through intelliJ IDEA or another tool for kotlin
